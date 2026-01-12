@@ -1,0 +1,104 @@
+<!doctype html>
+<html lang="en">
+<head>
+  <meta charset="utf-8" />
+  <meta name="viewport" content="width=device-width,initial-scale=1" />
+  <title>Estimate | Stable Table</title>
+  <meta name="description" content="Get a free estimate for restoration or custom woodworking. Upload photos and share measurements for the fastest response." />
+  <link rel="stylesheet" href="css/styles.css" />
+</head>
+<body>
+  <header class="topbar">
+    <div class="wrap toprow">
+      <a class="brand" href="index.html"><div class="name">Stable Table</div><div class="tag">FREE ESTIMATE</div></a>
+      <nav class="nav">
+        <a href="index.html">Home</a>
+        <a href="work.html">Work</a>
+        <a href="process.html">Process</a>
+        <a href="about.html">About</a>
+        <a class="active" href="contact.html">Estimate</a>
+      </nav>
+    </div>
+  </header>
+
+  <main class="section">
+    <div class="wrap split">
+      <div class="card">
+        <div class="kicker"><span class="dot"></span> CONTACT</div>
+        <div class="h2">Get a free estimate</div>
+        <p class="lead">Call/text or send a quick intake. The more photos + measurements you provide, the faster and more accurate the estimate.</p>
+        <hr class="sep" />
+        <p class="note"><strong>Phone:</strong> (989) 306-5212<br/>
+          <strong>Email:</strong> wadecanell@gmail.com<br/>
+          <strong>Location:</strong> Cheboygan, MI
+        </p>
+      </div>
+
+      <div class="card">
+        <div class="kicker"><span class="dot"></span> QUICK INTAKE</div>
+
+        <form class="form" name="estimate" method="POST" data-netlify="true" netlify-honeypot="bot-field" action="/thanks.html" enctype="multipart/form-data">
+          <input type="hidden" name="form-name" value="estimate" />
+          <p style="display:none;">
+            <label>Don’t fill this out: <input name="bot-field" /></label>
+          </p>
+
+          <div class="field">
+            <label>Full name</label>
+            <input name="name" required />
+          </div>
+
+          <div class="field">
+            <label>Email</label>
+            <input type="email" name="email" required />
+          </div>
+
+          <div class="field">
+            <label>Phone (optional)</label>
+            <input name="phone" />
+          </div>
+
+          <div class="field">
+            <label>Project type</label>
+            <select name="type" required>
+              <option value="Restoration">Restoration / Refinishing</option>
+              <option value="Repair">Structural Repair</option>
+              <option value="Custom">Custom Build</option>
+              <option value="SmallGoods">Small Goods (trays, boxes, etc.)</option>
+              <option value="Other">Other</option>
+            </select>
+          </div>
+
+          <div class="field">
+            <label>Measurements (optional)</label>
+            <input name="measurements" placeholder="Example: 48in L × 30in W × 30in H" />
+          </div>
+
+          <div class="field">
+            <label>Project details</label>
+            <textarea name="details" rows="5" required placeholder="What do you want done? What issues exist? What finish direction? Timeline?"></textarea>
+          </div>
+
+          <div class="field">
+            <label>Photos / attachments (optional)</label>
+            <input type="file" name="attachments" multiple />
+            <div class="note">For the fastest estimate: add 3–6 photos (top, underside, problem areas).</div>
+          </div>
+
+          <button class="btn primary" type="submit">Submit</button>
+          <div class="note">By submitting, you acknowledge estimates are based on the information provided and may change after an in-person assessment.</div>
+        </form>
+      </div>
+    </div>
+  </main>
+
+  <footer class="footer">
+    <div class="wrap footerGrid">
+      <div class="footerSmall">© <span id="year"></span> Stable Table • Cheboygan, MI</div>
+      <div class="footerLinks"><a href="work.html">View Work</a></div>
+    </div>
+  </footer>
+
+  <script src="js/script.js"></script>
+</body>
+</html>

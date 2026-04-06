@@ -1,0 +1,649 @@
+<!DOCTYPE html>
+<html lang="en" class="scroll-smooth">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Stable Table | Custom Woodworking, Restoration & Refinishing in Cheboygan, MI</title>
+  <meta name="description" content="Stable Table Woodworking & Restoration L.L.C. creates custom furniture, heirloom restorations, refinishing, and repair in Cheboygan, Michigan. Veteran-owned craftsmanship built to last." />
+  <meta property="og:title" content="Stable Table | Custom Woodworking & Restoration" />
+  <meta property="og:description" content="Custom woodworking, heirloom restoration, refinishing, and repair in Cheboygan, Michigan." />
+  <meta property="og:type" content="website" />
+  <meta property="og:image" content="_First_Logo_Only.jpg" />
+  <meta name="theme-color" content="#090909" />
+
+  <script src="https://cdn.tailwindcss.com"></script>
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Cinzel:wght@400;500;600;700;800&family=Inter:wght@300;400;500;600;700;800&display=swap" rel="stylesheet">
+
+  <script>
+    tailwind.config = {
+      theme: {
+        extend: {
+          colors: {
+            obsidian: '#090909',
+            charcoal: '#111111',
+            graphite: '#1b1b1b',
+            ivory: '#f8f6f1',
+            amber: '#d97706',
+            bronze: '#8b5a2b'
+          },
+          fontFamily: {
+            serif: ['Cinzel', 'serif'],
+            sans: ['Inter', 'sans-serif']
+          },
+          boxShadow: {
+            glow: '0 30px 80px rgba(0,0,0,0.45)',
+            panel: '0 30px 80px rgba(0,0,0,0.35)'
+          }
+        }
+      }
+    }
+  </script>
+
+  <style>
+    body {
+      background: #090909;
+      color: #f8f6f1;
+    }
+
+    .hero-overlay {
+      background:
+        radial-gradient(circle at top, rgba(217, 119, 6, 0.10), transparent 25%),
+        linear-gradient(to bottom, rgba(0,0,0,0.18) 0%, rgba(0,0,0,0.58) 48%, rgba(9,9,9,1) 100%);
+    }
+
+    .glass-panel {
+      background: rgba(255,255,255,0.03);
+      border: 1px solid rgba(255,255,255,0.08);
+      backdrop-filter: blur(18px);
+      -webkit-backdrop-filter: blur(18px);
+      box-shadow: 0 25px 80px rgba(0,0,0,0.35);
+    }
+
+    .gold-line {
+      height: 1px;
+      background: linear-gradient(90deg, transparent, rgba(217,119,6,0.7), transparent);
+    }
+
+    .reveal {
+      opacity: 0;
+      transform: translateY(28px);
+      transition: opacity 0.9s ease, transform 0.9s ease;
+    }
+
+    .reveal.active {
+      opacity: 1;
+      transform: translateY(0);
+    }
+
+    .soft-grid {
+      background-image:
+        linear-gradient(rgba(255,255,255,0.03) 1px, transparent 1px),
+        linear-gradient(90deg, rgba(255,255,255,0.03) 1px, transparent 1px);
+      background-size: 36px 36px;
+      mask-image: radial-gradient(circle at center, black 45%, transparent 95%);
+    }
+
+    .text-gradient {
+      background: linear-gradient(180deg, #fff 0%, #d1d1d1 100%);
+      -webkit-background-clip: text;
+      background-clip: text;
+      color: transparent;
+    }
+
+    .service-card:hover,
+    .project-card:hover,
+    .testimonial-card:hover,
+    .gallery-card:hover {
+      transform: translateY(-4px);
+      border-color: rgba(217,119,6,0.5);
+    }
+
+    .wood-photo {
+      filter: saturate(1.03) contrast(1.02);
+    }
+
+    .before-after-grid {
+      display: grid;
+      grid-template-columns: 1fr 1fr;
+      gap: 1rem;
+    }
+
+    .label-pill {
+      display: inline-block;
+      font-size: 10px;
+      letter-spacing: 0.28em;
+      text-transform: uppercase;
+      color: rgba(255,255,255,0.75);
+      background: rgba(0,0,0,0.5);
+      border: 1px solid rgba(255,255,255,0.12);
+      padding: 0.5rem 0.9rem;
+      border-radius: 999px;
+    }
+
+    @media (max-width: 1023px) {
+      .statement-lift {
+        margin-top: 0;
+      }
+
+      .before-after-grid {
+        grid-template-columns: 1fr;
+      }
+    }
+  </style>
+</head>
+<body class="antialiased selection:bg-amber selection:text-black font-sans">
+
+  <header class="fixed top-0 inset-x-0 z-50 border-b border-white/10 bg-obsidian/80 backdrop-blur-xl">
+    <div class="max-w-7xl mx-auto px-5 md:px-8">
+      <div class="flex items-center justify-between py-4 md:py-5 gap-4">
+        <a href="#home" class="flex items-center gap-4 min-w-0">
+          <img src="_First_Logo_Only.jpg" alt="Stable Table logo" class="h-12 md:h-14 w-auto opacity-95 drop-shadow-2xl" />
+          <div class="min-w-0">
+            <div class="font-serif text-lg md:text-2xl uppercase tracking-[0.22em] text-ivory font-bold leading-none">Stable Table</div>
+            <div class="text-[10px] md:text-[11px] uppercase tracking-[0.28em] text-white/50 mt-1 leading-none">Woodworking & Restoration L.L.C.</div>
+          </div>
+        </a>
+
+        <nav class="hidden xl:flex items-center gap-8 text-[11px] uppercase tracking-[0.28em] text-white/65 font-medium">
+          <a href="#about" class="hover:text-amber transition-colors">About</a>
+          <a href="#services" class="hover:text-amber transition-colors">Services</a>
+          <a href="#featured" class="hover:text-amber transition-colors">Featured</a>
+          <a href="#portfolio" class="hover:text-amber transition-colors">Portfolio</a>
+          <a href="#reviews" class="hover:text-amber transition-colors">Reviews</a>
+          <a href="#contact" class="hover:text-amber transition-colors">Contact</a>
+        </nav>
+
+        <div class="flex items-center gap-3 shrink-0">
+          <a href="tel:19893065212" class="hidden md:inline-flex text-[11px] uppercase tracking-[0.26em] text-white/65 hover:text-amber transition-colors">
+            (989) 306-5212
+          </a>
+          <a href="#contact" class="inline-flex items-center justify-center border border-white/20 px-4 md:px-6 py-3 text-[10px] md:text-[11px] uppercase tracking-[0.30em] font-semibold hover:bg-amber hover:text-black hover:border-amber transition-all duration-300">
+            Request a Quote
+          </a>
+        </div>
+      </div>
+    </div>
+  </header>
+
+  <section id="home" class="relative min-h-screen flex items-center overflow-hidden pt-28 md:pt-32">
+    <div class="absolute inset-0">
+      <img src="Action.jpg" alt="Woodworking in progress" class="w-full h-full object-cover object-center opacity-35" />
+      <div class="absolute inset-0 hero-overlay"></div>
+      <div class="absolute inset-0 soft-grid opacity-40"></div>
+    </div>
+
+    <div class="relative z-10 max-w-7xl mx-auto px-5 md:px-8 w-full">
+      <div class="grid lg:grid-cols-[1.15fr_0.85fr] gap-12 items-end">
+        <div class="max-w-4xl reveal active">
+          <p class="text-[11px] md:text-xs uppercase tracking-[0.45em] text-amber mb-6 font-semibold">Cheboygan, Michigan • Veteran Owned • Third-Generation Craft</p>
+          <h1 class="font-serif text-4xl sm:text-5xl md:text-6xl xl:text-7xl leading-[1.08] tracking-[0.06em] text-gradient uppercase">
+            Custom Woodworking,<br />
+            Restoration &<br />
+            Refinishing That Lasts.
+          </h1>
+          <p class="mt-8 max-w-2xl text-base md:text-lg text-white/70 leading-relaxed font-light">
+            Stable Table creates heirloom-quality furniture, restoration work, refinishing, and custom builds with old-school craftsmanship, real shop discipline, and a standard of care that shows in the finished product.
+          </p>
+
+          <div class="mt-10 flex flex-col sm:flex-row gap-4">
+            <a href="#portfolio" class="inline-flex items-center justify-center px-7 py-4 bg-amber text-black font-semibold text-[11px] uppercase tracking-[0.28em] hover:opacity-90 transition-opacity shadow-glow">
+              View Our Work
+            </a>
+            <a href="#contact" class="inline-flex items-center justify-center px-7 py-4 border border-white/20 text-white font-semibold text-[11px] uppercase tracking-[0.28em] hover:bg-white hover:text-black transition-all duration-300">
+              Start Your Project
+            </a>
+          </div>
+
+          <div class="mt-12 grid sm:grid-cols-3 gap-5 max-w-3xl">
+            <div class="glass-panel rounded-2xl p-5">
+              <div class="text-[10px] uppercase tracking-[0.28em] text-white/45 mb-2">Specialty</div>
+              <div class="text-white/90 font-medium leading-snug">Custom Builds & Fine Furniture</div>
+            </div>
+            <div class="glass-panel rounded-2xl p-5">
+              <div class="text-[10px] uppercase tracking-[0.28em] text-white/45 mb-2">Focus</div>
+              <div class="text-white/90 font-medium leading-snug">Heirloom Restoration & Refinishing</div>
+            </div>
+            <div class="glass-panel rounded-2xl p-5">
+              <div class="text-[10px] uppercase tracking-[0.28em] text-white/45 mb-2">Built For</div>
+              <div class="text-white/90 font-medium leading-snug">Homes, Legacy Pieces & Statement Spaces</div>
+            </div>
+          </div>
+        </div>
+
+        <div class="reveal lg:justify-self-end">
+          <div class="glass-panel rounded-[28px] p-6 md:p-8 max-w-md xl:max-w-lg">
+            <div class="text-[10px] uppercase tracking-[0.32em] text-amber font-semibold mb-4">Why Clients Reach Out</div>
+            <div class="space-y-4 text-white/72 leading-relaxed text-sm md:text-base font-light">
+              <p>They want a piece saved instead of replaced.</p>
+              <p>They want custom work built around their space, not a catalog.</p>
+              <p>They want craftsmanship with real accountability behind it.</p>
+            </div>
+            <div class="gold-line my-6"></div>
+            <p class="text-sm text-white/55 font-light leading-relaxed">
+              If you care about quality, detail, and something worth passing down, you are in the right place.
+            </p>
+          </div>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <section class="relative z-10 statement-lift mt-10 md:mt-14 px-5 md:px-8">
+    <div class="max-w-5xl mx-auto glass-panel rounded-[32px] p-8 md:p-14 text-center reveal">
+      <div class="w-20 mx-auto gold-line mb-8"></div>
+      <h2 class="font-serif text-2xl md:text-4xl italic leading-relaxed text-white/85">
+        “Preserving the past,<br class="hidden md:block" /> preparing for the future.”
+      </h2>
+      <p class="mt-6 text-white/55 max-w-3xl mx-auto leading-relaxed font-light">
+        Every commission and restoration is handled with the goal of creating something durable, beautiful, and worthy of the people who will live with it for years to come.
+      </p>
+      <div class="w-20 mx-auto gold-line mt-8"></div>
+    </div>
+  </section>
+
+  <section id="about" class="py-24 md:py-32 px-5 md:px-8 bg-obsidian">
+    <div class="max-w-7xl mx-auto grid lg:grid-cols-2 gap-12 xl:gap-20 items-center">
+      <div class="relative reveal">
+        <div class="absolute -inset-4 rounded-[28px] border border-amber/20"></div>
+        <img src="20251214_220055.jpg" alt="Wade working in the shop aligning wood" class="relative rounded-[24px] w-full aspect-[4/5] object-cover object-center shadow-panel" />
+      </div>
+
+      <div class="reveal">
+        <p class="text-[11px] uppercase tracking-[0.42em] text-amber font-semibold mb-5">About Stable Table</p>
+        <h2 class="font-serif text-3xl md:text-5xl uppercase tracking-[0.10em] leading-tight text-white/92">
+          Built on Heritage.<br />
+          Run with Discipline.
+        </h2>
+        <div class="gold-line my-8"></div>
+        <div class="space-y-6 text-white/65 text-base md:text-lg leading-relaxed font-light">
+          <p>
+            Stable Table is rooted in third-generation woodworking and shaped by a standard of workmanship that treats quality as the baseline, not the upgrade.
+          </p>
+          <p>
+            That traditional craft is backed by a modern, organized workflow and a level of accountability forged through military service. The result is a shop that values precision, communication, and work that holds up over time.
+          </p>
+          <p>
+            Whether restoring a family piece, refinishing furniture with life left in it, or building something custom from the ground up, the mission stays the same: create work with integrity and make it worth owning for decades.
+          </p>
+        </div>
+
+        <div class="mt-10 grid sm:grid-cols-2 gap-4">
+          <div class="rounded-2xl border border-white/10 bg-white/[0.02] p-5">
+            <div class="text-[10px] uppercase tracking-[0.3em] text-white/40 mb-2">Based In</div>
+            <div class="text-white/90 font-medium">Cheboygan, Michigan</div>
+          </div>
+          <div class="rounded-2xl border border-white/10 bg-white/[0.02] p-5">
+            <div class="text-[10px] uppercase tracking-[0.3em] text-white/40 mb-2">Business Type</div>
+            <div class="text-white/90 font-medium">Veteran-Owned Woodworking Studio</div>
+          </div>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <section id="services" class="py-24 md:py-32 px-5 md:px-8 bg-charcoal border-y border-white/8">
+    <div class="max-w-7xl mx-auto">
+      <div class="max-w-3xl mb-16 reveal">
+        <p class="text-[11px] uppercase tracking-[0.42em] text-amber font-semibold mb-5">Services</p>
+        <h2 class="font-serif text-3xl md:text-5xl uppercase tracking-[0.10em] leading-tight text-white/92">What We Build, Restore & Refine</h2>
+        <p class="mt-6 text-white/62 text-base md:text-lg font-light leading-relaxed">
+          Clear, high-end craftsmanship with real utility behind it. No filler. No assembly-line feel. Just work done right.
+        </p>
+      </div>
+
+      <div class="grid md:grid-cols-2 xl:grid-cols-4 gap-5">
+        <div class="service-card rounded-[24px] border border-white/10 bg-white/[0.02] p-7 transition-all duration-300 reveal">
+          <div class="text-[10px] uppercase tracking-[0.32em] text-amber mb-4">01</div>
+          <h3 class="font-serif text-2xl mb-4 text-white/92">Furniture Restoration</h3>
+          <p class="text-white/58 leading-relaxed font-light">Structural repairs, missing-part reconstruction, stabilization, and careful restoration for pieces worth saving.</p>
+        </div>
+
+        <div class="service-card rounded-[24px] border border-white/10 bg-white/[0.02] p-7 transition-all duration-300 reveal">
+          <div class="text-[10px] uppercase tracking-[0.32em] text-amber mb-4">02</div>
+          <h3 class="font-serif text-2xl mb-4 text-white/92">Custom Artisan Builds</h3>
+          <p class="text-white/58 leading-relaxed font-light">Purpose-built furniture and statement pieces designed around your home, style, and functional needs.</p>
+        </div>
+
+        <div class="service-card rounded-[24px] border border-white/10 bg-white/[0.02] p-7 transition-all duration-300 reveal">
+          <div class="text-[10px] uppercase tracking-[0.32em] text-amber mb-4">03</div>
+          <h3 class="font-serif text-2xl mb-4 text-white/92">Refinishing & Repair</h3>
+          <p class="text-white/58 leading-relaxed font-light">Finish renewal, surface correction, damage repair, and refinishing work that brings worn furniture back to life.</p>
+        </div>
+
+        <div class="service-card rounded-[24px] border border-white/10 bg-white/[0.02] p-7 transition-all duration-300 reveal">
+          <div class="text-[10px] uppercase tracking-[0.32em] text-amber mb-4">04</div>
+          <h3 class="font-serif text-2xl mb-4 text-white/92">Creative Collaboration</h3>
+          <p class="text-white/58 leading-relaxed font-light">Work directly with the craftsman to develop a one-of-a-kind piece, restoration plan, or design concept from the ground up.</p>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <section id="featured" class="py-24 md:py-32 px-5 md:px-8 bg-obsidian overflow-hidden">
+    <div class="max-w-7xl mx-auto">
+      <div class="max-w-3xl mb-12 reveal">
+        <p class="text-[11px] uppercase tracking-[0.42em] text-amber font-semibold mb-5">Featured Restoration</p>
+        <h2 class="font-serif text-3xl md:text-5xl uppercase tracking-[0.10em] leading-tight text-white/92">Outdoor Teak Table Revival</h2>
+        <p class="mt-6 text-white/60 text-base md:text-lg font-light leading-relaxed">
+          A direct before-and-after transformation showing surface recovery, tone restoration, and the kind of finish work that brings tired outdoor furniture back to life.
+        </p>
+      </div>
+
+      <div class="before-after-grid reveal">
+        <div class="glass-panel rounded-[28px] overflow-hidden p-4">
+          <div class="mb-4"><span class="label-pill">Before</span></div>
+          <img src="01_A_TEAK_BEFORE.jpg" alt="Teak outdoor table before restoration" class="w-full rounded-[18px] object-cover wood-photo" />
+        </div>
+        <div class="glass-panel rounded-[28px] overflow-hidden p-4">
+          <div class="mb-4"><span class="label-pill">After</span></div>
+          <img src="01_B_TEAK_After.jpg" alt="Teak outdoor table after restoration" class="w-full rounded-[18px] object-cover wood-photo" />
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <section id="portfolio" class="py-24 md:py-32 px-5 md:px-8 bg-charcoal border-y border-white/8">
+    <div class="max-w-7xl mx-auto">
+      <div class="flex flex-col lg:flex-row lg:items-end lg:justify-between gap-8 mb-16 reveal">
+        <div class="max-w-3xl">
+          <p class="text-[11px] uppercase tracking-[0.42em] text-amber font-semibold mb-5">Portfolio</p>
+          <h2 class="font-serif text-3xl md:text-5xl uppercase tracking-[0.10em] leading-tight text-white/92">Real Work. Real Materials. Real Shop.</h2>
+        </div>
+        <p class="text-white/58 max-w-xl font-light leading-relaxed">
+          Actual project work, real transformations, turned pieces, custom furniture, and restoration pieces — not generic stock imagery.
+        </p>
+      </div>
+
+      <div class="grid lg:grid-cols-3 gap-6">
+        <article class="gallery-card rounded-[26px] overflow-hidden border border-white/10 bg-white/[0.02] transition-all duration-300 reveal">
+          <img src="Before and after01 4 of 4.jpg" alt="Finished turned wooden bowls" class="w-full aspect-[4/3] object-cover wood-photo" />
+          <div class="p-7">
+            <div class="text-[10px] uppercase tracking-[0.30em] text-amber mb-3">Turned Pieces</div>
+            <h3 class="font-serif text-2xl text-white/92 mb-3">Hand-Turned Bowl Project</h3>
+            <p class="text-white/58 font-light leading-relaxed">From raw spalted stock to finished bowl forms, this sequence shows both material vision and execution on the lathe.</p>
+          </div>
+        </article>
+
+        <article class="gallery-card rounded-[26px] overflow-hidden border border-white/10 bg-white/[0.02] transition-all duration-300 reveal lg:mt-10">
+          <img src="Before and after02 3 of 3 - Copy.jpg" alt="Finished restored kitchen table" class="w-full aspect-[4/3] object-cover wood-photo" />
+          <div class="p-7">
+            <div class="text-[10px] uppercase tracking-[0.30em] text-amber mb-3">Restoration</div>
+            <h3 class="font-serif text-2xl text-white/92 mb-3">Kitchen Table Revival</h3>
+            <p class="text-white/58 font-light leading-relaxed">A worn table brought back with a richer surface, better tone, and a finish that feels clean, warm, and usable again.</p>
+          </div>
+        </article>
+
+        <article class="gallery-card rounded-[26px] overflow-hidden border border-white/10 bg-white/[0.02] transition-all duration-300 reveal">
+          <img src="Screenshot_20250724_210733_Reddit.jpg" alt="Curved wooden chest" class="w-full aspect-[4/3] object-cover wood-photo" />
+          <div class="p-7">
+            <div class="text-[10px] uppercase tracking-[0.30em] text-amber mb-3">Custom Build</div>
+            <h3 class="font-serif text-2xl text-white/92 mb-3">Curved Wood Chest</h3>
+            <p class="text-white/58 font-light leading-relaxed">A warm finished chest with strong grain character and handcrafted detail, showing range beyond standard furniture forms.</p>
+          </div>
+        </article>
+
+        <article class="gallery-card rounded-[26px] overflow-hidden border border-white/10 bg-white/[0.02] transition-all duration-300 reveal">
+          <img src="DIY-wooden-love-seat.jpg" alt="Handmade wooden loveseat" class="w-full aspect-[4/3] object-cover wood-photo" />
+          <div class="p-7">
+            <div class="text-[10px] uppercase tracking-[0.30em] text-amber mb-3">Custom Seating</div>
+            <h3 class="font-serif text-2xl text-white/92 mb-3">Handmade Love Seat</h3>
+            <p class="text-white/58 font-light leading-relaxed">Functional design, solid construction, and a piece that feels handcrafted instead of mass-produced.</p>
+          </div>
+        </article>
+
+        <article class="gallery-card rounded-[26px] overflow-hidden border border-white/10 bg-white/[0.02] transition-all duration-300 reveal lg:mt-10">
+          <img src="Screenshot_20250724_210754_Reddit.jpg" alt="Custom nightstands with drawers" class="w-full aspect-[4/3] object-cover wood-photo" />
+          <div class="p-7">
+            <div class="text-[10px] uppercase tracking-[0.30em] text-amber mb-3">Casework</div>
+            <h3 class="font-serif text-2xl text-white/92 mb-3">Custom Nightstands</h3>
+            <p class="text-white/58 font-light leading-relaxed">Small furniture with visual warmth, proportion, and practical storage built into the design.</p>
+          </div>
+        </article>
+
+        <article class="gallery-card rounded-[26px] overflow-hidden border border-white/10 bg-white/[0.02] transition-all duration-300 reveal">
+          <img src="Item01_Coffee_Table_Streak.jpg" alt="Custom coffee table" class="w-full aspect-[4/3] object-cover wood-photo" />
+          <div class="p-7">
+            <div class="text-[10px] uppercase tracking-[0.30em] text-amber mb-3">Furniture</div>
+            <h3 class="font-serif text-2xl text-white/92 mb-3">Accent & Coffee Table Work</h3>
+            <p class="text-white/58 font-light leading-relaxed">Another example of material contrast, clean lines, and custom-built utility with visual interest.</p>
+          </div>
+        </article>
+      </div>
+    </div>
+  </section>
+
+  <section class="py-24 md:py-32 px-5 md:px-8 bg-obsidian">
+    <div class="max-w-7xl mx-auto">
+      <div class="max-w-3xl mb-12 reveal">
+        <p class="text-[11px] uppercase tracking-[0.42em] text-amber font-semibold mb-5">Project Stories</p>
+        <h2 class="font-serif text-3xl md:text-5xl uppercase tracking-[0.10em] leading-tight text-white/92">Before, During & After</h2>
+      </div>
+
+      <div class="grid xl:grid-cols-2 gap-8">
+        <div class="glass-panel rounded-[30px] p-5 md:p-6 reveal">
+          <div class="flex flex-wrap gap-3 mb-5">
+            <span class="label-pill">Bowl Project</span>
+            <span class="label-pill">Material to Finished Piece</span>
+          </div>
+          <div class="grid grid-cols-2 gap-4">
+            <img src="Before and After01 1 of 4 - Copy.jpg" alt="Bowl project start" class="rounded-[18px] aspect-square object-cover wood-photo" />
+            <img src="Before and after01 2 of 4.jpg" alt="Bowl project shaping" class="rounded-[18px] aspect-square object-cover wood-photo" />
+            <img src="Before and after01 3 of 4.jpg" alt="Bowl project turning process" class="rounded-[18px] aspect-square object-cover wood-photo" />
+            <img src="Before and after01 4 of 4.jpg" alt="Finished wooden bowls" class="rounded-[18px] aspect-square object-cover wood-photo" />
+          </div>
+        </div>
+
+        <div class="glass-panel rounded-[30px] p-5 md:p-6 reveal">
+          <div class="flex flex-wrap gap-3 mb-5">
+            <span class="label-pill">Kitchen Table</span>
+            <span class="label-pill">Restoration Sequence</span>
+          </div>
+          <div class="grid grid-cols-1 gap-4">
+            <img src="Before and after02 2 0f 3.jpg" alt="Kitchen table before" class="rounded-[18px] aspect-[16/9] object-cover wood-photo" />
+            <img src="Before and after02 2 of 3 - Copy.jpg" alt="Kitchen table during restoration" class="rounded-[18px] aspect-[16/9] object-cover wood-photo" />
+            <img src="Before and after02 3 of 3 - Copy.jpg" alt="Kitchen table after restoration" class="rounded-[18px] aspect-[16/9] object-cover wood-photo" />
+          </div>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <section class="py-24 md:py-32 px-5 md:px-8 bg-charcoal border-y border-white/8">
+    <div class="max-w-7xl mx-auto grid lg:grid-cols-[1fr_1fr] gap-10 items-center">
+      <div class="reveal">
+        <p class="text-[11px] uppercase tracking-[0.42em] text-amber font-semibold mb-5">In The Shop</p>
+        <h2 class="font-serif text-3xl md:text-5xl uppercase tracking-[0.10em] leading-tight text-white/92">Community, Craft & Real Local Roots</h2>
+        <p class="mt-6 text-white/60 text-base md:text-lg font-light leading-relaxed">
+          This business is not built around a fake brand persona. It is rooted in a real local shop, real relationships, and the kind of work people can actually come see, talk about, and trust.
+        </p>
+        <p class="mt-5 text-white/55 font-light leading-relaxed">
+          Pictured here: Wade in the shop with Brody Cutter from Coffee Roasters in town.
+        </p>
+      </div>
+
+      <div class="reveal">
+        <img src="Wade and Brody.jpg" alt="Wade and Brody Cutter in the shop" class="w-full rounded-[28px] object-cover shadow-panel wood-photo" />
+      </div>
+    </div>
+  </section>
+
+  <section id="reviews" class="py-24 md:py-32 px-5 md:px-8 bg-obsidian">
+    <div class="max-w-7xl mx-auto">
+      <div class="text-center max-w-3xl mx-auto mb-16 reveal">
+        <p class="text-[11px] uppercase tracking-[0.42em] text-amber font-semibold mb-5">Client History</p>
+        <h2 class="font-serif text-3xl md:text-5xl uppercase tracking-[0.10em] leading-tight text-white/92">Verified Excellence</h2>
+        <p class="mt-6 text-white/58 font-light leading-relaxed">Strong review presentation with cleaner spacing and a more polished luxury layout.</p>
+      </div>
+
+      <div class="grid lg:grid-cols-3 gap-6">
+        <div class="testimonial-card glass-panel rounded-[28px] p-8 transition-all duration-300 reveal">
+          <p class="font-serif italic text-xl leading-relaxed text-white/78">“His skill and attention to detail is like the craftsmen of a bygone era. I highly recommend this business.”</p>
+          <div class="gold-line my-6"></div>
+          <div class="text-[11px] uppercase tracking-[0.30em] text-white/45 font-semibold">Janet Shoemaker</div>
+        </div>
+
+        <div class="testimonial-card glass-panel rounded-[28px] p-8 transition-all duration-300 reveal lg:translate-y-8">
+          <p class="font-serif italic text-xl leading-relaxed text-white/78">“A talented craftsman with honesty and integrity who truly takes pride in his work. Highly recommended.”</p>
+          <div class="gold-line my-6"></div>
+          <div class="text-[11px] uppercase tracking-[0.30em] text-white/45 font-semibold">Brian Pomerantz</div>
+        </div>
+
+        <div class="testimonial-card glass-panel rounded-[28px] p-8 transition-all duration-300 reveal">
+          <p class="font-serif italic text-xl leading-relaxed text-white/78">“Wade is very professional and has a keen eye for details. His work will be treasured for many generations.”</p>
+          <div class="gold-line my-6"></div>
+          <div class="text-[11px] uppercase tracking-[0.30em] text-white/45 font-semibold">Renee Brown</div>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <section class="py-24 md:py-28 px-5 md:px-8 bg-charcoal">
+    <div class="max-w-6xl mx-auto glass-panel rounded-[32px] p-10 md:p-14 reveal">
+      <div class="grid lg:grid-cols-[1.1fr_0.9fr] gap-10 items-center">
+        <div>
+          <p class="text-[11px] uppercase tracking-[0.42em] text-amber font-semibold mb-5">Ready To Start</p>
+          <h2 class="font-serif text-3xl md:text-5xl uppercase tracking-[0.10em] leading-tight text-white/92">Have a Piece Worth Saving? Need Something Built Right?</h2>
+          <p class="mt-6 text-white/60 text-base md:text-lg font-light leading-relaxed max-w-3xl">
+            Whether you need restoration, refinishing, repair, or a custom build, the next step is simple: reach out and start the conversation.
+          </p>
+        </div>
+        <div class="flex flex-col gap-4 lg:items-end">
+          <a href="tel:19893065212" class="w-full lg:w-auto inline-flex items-center justify-center px-8 py-4 bg-amber text-black text-[11px] uppercase tracking-[0.30em] font-semibold hover:opacity-90 transition-opacity">Call (989) 306-5212</a>
+          <a href="#contact" class="w-full lg:w-auto inline-flex items-center justify-center px-8 py-4 border border-white/18 text-white text-[11px] uppercase tracking-[0.30em] font-semibold hover:bg-white hover:text-black transition-all duration-300">Request a Quote Online</a>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <section id="contact" class="py-24 md:py-32 px-5 md:px-8 bg-obsidian border-t border-white/8">
+    <div class="max-w-7xl mx-auto grid xl:grid-cols-[0.8fr_1.2fr] gap-10 items-start">
+      <div class="reveal">
+        <p class="text-[11px] uppercase tracking-[0.42em] text-amber font-semibold mb-5">Contact</p>
+        <h2 class="font-serif text-3xl md:text-5xl uppercase tracking-[0.10em] leading-tight text-white/92">Start the Conversation</h2>
+        <p class="mt-6 text-white/60 text-base md:text-lg font-light leading-relaxed max-w-xl">
+          Tell us about your project, piece, or idea. Whether you are restoring something meaningful or commissioning something new, this is where it starts.
+        </p>
+
+        <div class="mt-10 space-y-5 text-white/72">
+          <div>
+            <div class="text-[10px] uppercase tracking-[0.30em] text-white/40 mb-2">Phone</div>
+            <a href="tel:19893065212" class="text-lg hover:text-amber transition-colors">(989) 306-5212</a>
+          </div>
+          <div>
+            <div class="text-[10px] uppercase tracking-[0.30em] text-white/40 mb-2">Website</div>
+            <a href="https://stabletable-woodworking.com" class="text-lg hover:text-amber transition-colors">StableTable-Woodworking.com</a>
+          </div>
+          <div>
+            <div class="text-[10px] uppercase tracking-[0.30em] text-white/40 mb-2">Location</div>
+            <div class="text-lg">Cheboygan, Michigan</div>
+          </div>
+        </div>
+      </div>
+
+      <div class="glass-panel rounded-[30px] p-7 md:p-10 reveal">
+        <form name="stable-table-contact" action="/thanks.html" method="POST" data-netlify="true" netlify-honeypot="bot-field" class="space-y-7">
+  <input type="hidden" name="form-name" value="stable-table-contact" />
+  <input type="hidden" name="subject" value="New lead from Stable Table website" />
+  <p class="hidden">
+    <label>Don’t fill this out if you're human: <input name="bot-field" /></label>
+  </p>
+
+          <div class="grid md:grid-cols-2 gap-5">
+            <div>
+              <label class="block text-[10px] uppercase tracking-[0.30em] text-white/45 mb-3">Full Name</label>
+              <input type="text" name="name" required placeholder="Your name" class="w-full rounded-2xl border border-white/12 bg-white/[0.03] px-5 py-4 text-white placeholder:text-white/25 focus:outline-none focus:border-amber transition-colors" />
+            </div>
+            <div>
+              <label class="block text-[10px] uppercase tracking-[0.30em] text-white/45 mb-3">Email Address</label>
+              <input type="email" name="email" required placeholder="email@address.com" class="w-full rounded-2xl border border-white/12 bg-white/[0.03] px-5 py-4 text-white placeholder:text-white/25 focus:outline-none focus:border-amber transition-colors" />
+            </div>
+          </div>
+
+          <div class="grid md:grid-cols-2 gap-5">
+            <div>
+              <label class="block text-[10px] uppercase tracking-[0.30em] text-white/45 mb-3">Phone</label>
+              <input type="tel" name="phone" placeholder="(555) 555-5555" class="w-full rounded-2xl border border-white/12 bg-white/[0.03] px-5 py-4 text-white placeholder:text-white/25 focus:outline-none focus:border-amber transition-colors" />
+            </div>
+            <div>
+              <label class="block text-[10px] uppercase tracking-[0.30em] text-white/45 mb-3">Project Type</label>
+              <select name="project_type" class="w-full rounded-2xl border border-white/12 bg-white/[0.03] px-5 py-4 text-white focus:outline-none focus:border-amber transition-colors">
+                <option value="" class="bg-graphite">Select one</option>
+                <option class="bg-graphite">Furniture Restoration</option>
+                <option class="bg-graphite">Custom Build</option>
+                <option class="bg-graphite">Refinishing & Repair</option>
+                <option class="bg-graphite">Creative Collaboration</option>
+              </select>
+            </div>
+          </div>
+
+          <div>
+            <label class="block text-[10px] uppercase tracking-[0.30em] text-white/45 mb-3">Project Details</label>
+            <textarea name="message" rows="6" required placeholder="Tell us about your piece, your space, or what you want built." class="w-full rounded-2xl border border-white/12 bg-white/[0.03] px-5 py-4 text-white placeholder:text-white/25 focus:outline-none focus:border-amber transition-colors resize-y"></textarea>
+          </div>
+
+          <div class="flex flex-col sm:flex-row gap-4 sm:items-center sm:justify-between pt-2">
+            <p class="text-sm text-white/42 font-light leading-relaxed">We will review your request and respond as soon as possible.</p>
+            <button type="submit" class="inline-flex items-center justify-center px-8 py-4 bg-amber text-black text-[11px] uppercase tracking-[0.30em] font-semibold hover:opacity-90 transition-opacity">
+              Send Inquiry
+            </button>
+          </div>
+        </form>
+      </div>
+    </div>
+  </section>
+
+  <footer class="py-12 px-5 md:px-8 border-t border-white/8 bg-obsidian">
+    <div class="max-w-7xl mx-auto flex flex-col lg:flex-row gap-8 lg:items-center lg:justify-between">
+      <div class="flex items-center gap-4">
+        <img src="_First_Logo_Only.jpg" alt="Stable Table footer logo" class="h-9 w-auto opacity-50" />
+        <div>
+          <div class="text-[11px] uppercase tracking-[0.32em] text-white/42">Stable Table Woodworking & Restoration L.L.C.</div>
+          <div class="text-sm text-white/32 mt-1">Custom woodworking, restoration, refinishing, and repair in Cheboygan, Michigan.</div>
+        </div>
+      </div>
+
+      <div class="flex flex-wrap gap-x-8 gap-y-3 text-[11px] uppercase tracking-[0.26em] text-white/36">
+        <span>Cheboygan, MI</span>
+        <span>Veteran Owned</span>
+        <span>© 2026 Stable Table</span>
+      </div>
+    </div>
+  </footer>
+
+  <script>
+    const reveals = document.querySelectorAll('.reveal');
+
+    const revealOnScroll = () => {
+      reveals.forEach((el) => {
+        const rect = el.getBoundingClientRect();
+        if (rect.top < window.innerHeight - 100) {
+          el.classList.add('active');
+        }
+      });
+    };
+
+    window.addEventListener('scroll', revealOnScroll);
+    window.addEventListener('load', revealOnScroll);
+  </script>
+
+  <script type="application/ld+json">
+  {
+    "@context": "https://schema.org",
+    "@type": "LocalBusiness",
+    "name": "Stable Table Woodworking & Restoration L.L.C.",
+    "telephone": "+1-989-306-5212",
+    "url": "https://stabletable-woodworking.com",
+    "image": "_First_Logo_Only.jpg",
+    "address": {
+      "@type": "PostalAddress",
+      "addressLocality": "Cheboygan",
+      "addressRegion": "MI",
+      "addressCountry": "US"
+    },
+    "description": "Veteran-owned woodworking studio offering custom furniture, heirloom restoration, refinishing, and repair in Cheboygan, Michigan."
+  }
+  </script>
+</body>
+</html>

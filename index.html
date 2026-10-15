@@ -4,11 +4,16 @@
   <meta charset="UTF-8" />
   <meta name="viewport" content="width=device-width, initial-scale=1.0" />
   <title>Stable Table | Custom Woodworking, Restoration & Refinishing in Cheboygan, MI</title>
-  <meta name="description" content="Stable Table Woodworking & Restoration L.L.C. creates custom furniture, heirloom restorations, refinishing, and repair in Cheboygan, Michigan. Veteran-owned craftsmanship built to last." />
+  <meta name="description" content="Veteran-owned furniture repair, restoration, refinishing, and custom woodworking in Cheboygan, Michigan. Start a conversation and request a free preliminary estimate." />
+  <link rel="canonical" href="https://stabletable-woodworking.com/" />
+  <meta name="robots" content="index, follow, max-image-preview:large" />
   <meta property="og:title" content="Stable Table | Custom Woodworking & Restoration" />
-  <meta property="og:description" content="Custom woodworking, heirloom restoration, refinishing, and repair in Cheboygan, Michigan." />
+  <meta property="og:description" content="Furniture repair, restoration, refinishing, and custom woodworking in Cheboygan, Michigan. Start a conversation and request a free preliminary estimate." />
   <meta property="og:type" content="website" />
-  <meta property="og:image" content="_First_Logo_Only.jpg" />
+  <meta property="og:url" content="https://stabletable-woodworking.com/" />
+  <meta property="og:image" content="https://stabletable-woodworking.com/_First_Logo_Only.jpg" />
+  <meta property="og:image:alt" content="Stable Table Woodworking and Restoration logo" />
+  <meta name="twitter:card" content="summary_large_image" />
   <meta name="theme-color" content="#090909" />
 
   <script src="https://cdn.tailwindcss.com"></script>
@@ -43,8 +48,40 @@
 
   <style>
     body {
-      background: #090909;
+      background:
+        radial-gradient(circle at 15% 10%, rgba(139,90,43,0.08), transparent 28rem),
+        #090909;
       color: #f8f6f1;
+    }
+
+    .site-header {
+      background: linear-gradient(180deg, rgba(9,9,9,0.97), rgba(9,9,9,0.88));
+      box-shadow: 0 14px 45px rgba(0,0,0,0.30);
+    }
+
+    .brand-mark {
+      border: 1px solid rgba(255,255,255,0.14);
+      box-shadow: 0 12px 38px rgba(0,0,0,0.48);
+    }
+
+    .nav-link {
+      position: relative;
+      padding: 0.7rem 0;
+    }
+
+    .nav-link::after {
+      content: '';
+      position: absolute;
+      left: 0;
+      right: 100%;
+      bottom: 0.2rem;
+      height: 1px;
+      background: #d97706;
+      transition: right 220ms ease;
+    }
+
+    .nav-link:hover::after {
+      right: 0;
     }
 
     .hero-overlay {
@@ -59,6 +96,22 @@
       backdrop-filter: blur(18px);
       -webkit-backdrop-filter: blur(18px);
       box-shadow: 0 25px 80px rgba(0,0,0,0.35);
+    }
+
+    .form-shell {
+      background:
+        linear-gradient(145deg, rgba(255,255,255,0.055), rgba(255,255,255,0.018)),
+        rgba(17,17,17,0.84);
+      border: 1px solid rgba(217,119,6,0.20);
+      box-shadow: 0 36px 100px rgba(0,0,0,0.50);
+    }
+
+    .form-control {
+      box-shadow: inset 0 1px 0 rgba(255,255,255,0.025);
+    }
+
+    .form-control:focus {
+      box-shadow: 0 0 0 3px rgba(217,119,6,0.10);
     }
 
     .gold-line {
@@ -135,24 +188,24 @@
 </head>
 <body class="antialiased selection:bg-amber selection:text-black font-sans">
 
-  <header class="fixed top-0 inset-x-0 z-50 border-b border-white/10 bg-obsidian/80 backdrop-blur-xl">
-    <div class="max-w-7xl mx-auto px-5 md:px-8">
-      <div class="flex items-center justify-between py-4 md:py-5 gap-4">
-        <a href="#home" class="flex items-center gap-4 min-w-0">
-          <img src="_First_Logo_Only.jpg" alt="Stable Table logo" class="h-12 md:h-14 w-auto opacity-95 drop-shadow-2xl" />
+  <header class="site-header fixed top-0 inset-x-0 z-50 border-b border-white/10 backdrop-blur-xl">
+    <div class="max-w-[1400px] mx-auto px-4 md:px-8">
+      <div class="flex items-center justify-between py-3 md:py-4 gap-4">
+        <a href="#home" class="flex items-center gap-4 md:gap-5 min-w-0 group" aria-label="Stable Table home">
+          <img src="_First_Logo_Only.jpg" alt="Stable Table logo" class="brand-mark h-16 md:h-20 w-auto opacity-100 transition-transform duration-300 group-hover:scale-[1.02]" />
           <div class="min-w-0">
-            <div class="font-serif text-lg md:text-2xl uppercase tracking-[0.22em] text-ivory font-bold leading-none">Stable Table</div>
-            <div class="text-[10px] md:text-[11px] uppercase tracking-[0.28em] text-white/50 mt-1 leading-none">Woodworking & Restoration L.L.C.</div>
+            <div class="font-serif text-xl md:text-[1.7rem] uppercase tracking-[0.20em] text-ivory font-bold leading-none">Stable Table</div>
+            <div class="hidden sm:block text-[9px] md:text-[10px] uppercase tracking-[0.30em] text-white/50 mt-2 leading-none">Woodworking & Restoration L.L.C.</div>
           </div>
         </a>
 
-        <nav class="hidden xl:flex items-center gap-8 text-[11px] uppercase tracking-[0.28em] text-white/65 font-medium">
-          <a href="#about" class="hover:text-amber transition-colors">About</a>
-          <a href="#services" class="hover:text-amber transition-colors">Services</a>
-          <a href="#featured" class="hover:text-amber transition-colors">Featured</a>
-          <a href="#portfolio" class="hover:text-amber transition-colors">Portfolio</a>
-          <a href="#reviews" class="hover:text-amber transition-colors">Reviews</a>
-          <a href="#contact" class="hover:text-amber transition-colors">Contact</a>
+        <nav class="hidden xl:flex items-center gap-6 text-[10px] uppercase tracking-[0.26em] text-white/65 font-medium" aria-label="Primary navigation">
+          <a href="#about" class="nav-link hover:text-amber transition-colors">About</a>
+          <a href="#services" class="nav-link hover:text-amber transition-colors">Services</a>
+          <a href="#featured" class="nav-link hover:text-amber transition-colors">Featured</a>
+          <a href="#portfolio" class="nav-link hover:text-amber transition-colors">Portfolio</a>
+          <a href="#reviews" class="nav-link hover:text-amber transition-colors">Reviews</a>
+          <a href="#contact" class="nav-link hover:text-amber transition-colors">Contact</a>
         </nav>
 
         <div class="flex items-center gap-3 shrink-0">
@@ -167,7 +220,7 @@
     </div>
   </header>
 
-  <section id="home" class="relative min-h-screen flex items-center overflow-hidden pt-28 md:pt-32">
+  <section id="home" class="relative min-h-screen flex items-center overflow-hidden pt-32 md:pt-36">
     <div class="absolute inset-0">
       <img src="Action.jpg" alt="Woodworking in progress" class="w-full h-full object-cover object-center opacity-35" />
       <div class="absolute inset-0 hero-overlay"></div>
@@ -179,12 +232,12 @@
         <div class="max-w-4xl reveal active">
           <p class="text-[11px] md:text-xs uppercase tracking-[0.45em] text-amber mb-6 font-semibold">Cheboygan, Michigan • Veteran Owned • Third-Generation Craft</p>
           <h1 class="font-serif text-4xl sm:text-5xl md:text-6xl xl:text-7xl leading-[1.08] tracking-[0.06em] text-gradient uppercase">
-            Custom Woodworking,<br />
-            Restoration &<br />
-            Refinishing That Lasts.
+            Furniture Restoration,<br />
+            Refinishing &<br />
+            Custom Work That Lasts.
           </h1>
           <p class="mt-8 max-w-2xl text-base md:text-lg text-white/70 leading-relaxed font-light">
-            Stable Table creates heirloom-quality furniture, restoration work, refinishing, and custom builds with old-school craftsmanship, real shop discipline, and a standard of care that shows in the finished product.
+            Stable Table repairs, restores, and refinishes wooden furniture and creates select custom pieces with old-school craftsmanship, honest communication, and a standard of care that shows in the finished result.
           </p>
 
           <div class="mt-10 flex flex-col sm:flex-row gap-4">
@@ -199,15 +252,15 @@
           <div class="mt-12 grid sm:grid-cols-3 gap-5 max-w-3xl">
             <div class="glass-panel rounded-2xl p-5">
               <div class="text-[10px] uppercase tracking-[0.28em] text-white/45 mb-2">Specialty</div>
-              <div class="text-white/90 font-medium leading-snug">Custom Builds & Fine Furniture</div>
+              <div class="text-white/90 font-medium leading-snug">Furniture Restoration & Refinishing</div>
             </div>
             <div class="glass-panel rounded-2xl p-5">
               <div class="text-[10px] uppercase tracking-[0.28em] text-white/45 mb-2">Focus</div>
-              <div class="text-white/90 font-medium leading-snug">Heirloom Restoration & Refinishing</div>
+              <div class="text-white/90 font-medium leading-snug">Repair, Preservation & Custom Work</div>
             </div>
             <div class="glass-panel rounded-2xl p-5">
               <div class="text-[10px] uppercase tracking-[0.28em] text-white/45 mb-2">Built For</div>
-              <div class="text-white/90 font-medium leading-snug">Homes, Legacy Pieces & Statement Spaces</div>
+              <div class="text-white/90 font-medium leading-snug">Homes, Cottages, Businesses & Heirlooms</div>
             </div>
           </div>
         </div>
@@ -250,7 +303,7 @@
         <img src="20251214_220055.jpg" alt="Wade working in the shop aligning wood" class="relative rounded-[24px] w-full aspect-[4/5] object-cover object-center shadow-panel" />
       </div>
 
-      <div class="reveal">
+      <div class="reveal xl:sticky xl:top-36">
         <p class="text-[11px] uppercase tracking-[0.42em] text-amber font-semibold mb-5">About Stable Table</p>
         <h2 class="font-serif text-3xl md:text-5xl uppercase tracking-[0.10em] leading-tight text-white/92">
           Built on Heritage.<br />
@@ -302,20 +355,20 @@
 
         <div class="service-card rounded-[24px] border border-white/10 bg-white/[0.02] p-7 transition-all duration-300 reveal">
           <div class="text-[10px] uppercase tracking-[0.32em] text-amber mb-4">02</div>
-          <h3 class="font-serif text-2xl mb-4 text-white/92">Custom Artisan Builds</h3>
-          <p class="text-white/58 leading-relaxed font-light">Purpose-built furniture and statement pieces designed around your home, style, and functional needs.</p>
+          <h3 class="font-serif text-2xl mb-4 text-white/92">Refinishing & Surface Repair</h3>
+          <p class="text-white/58 leading-relaxed font-light">Finish renewal, staining, color matching, surface correction, and damage repair that brings worn furniture back to life.</p>
         </div>
 
         <div class="service-card rounded-[24px] border border-white/10 bg-white/[0.02] p-7 transition-all duration-300 reveal">
           <div class="text-[10px] uppercase tracking-[0.32em] text-amber mb-4">03</div>
-          <h3 class="font-serif text-2xl mb-4 text-white/92">Refinishing & Repair</h3>
-          <p class="text-white/58 leading-relaxed font-light">Finish renewal, surface correction, damage repair, and refinishing work that brings worn furniture back to life.</p>
+          <h3 class="font-serif text-2xl mb-4 text-white/92">Custom Furniture & Woodwork</h3>
+          <p class="text-white/58 leading-relaxed font-light">Select purpose-built furniture, shelving, cabinets, and one-of-a-kind pieces designed around practical needs and available shop capacity.</p>
         </div>
 
         <div class="service-card rounded-[24px] border border-white/10 bg-white/[0.02] p-7 transition-all duration-300 reveal">
           <div class="text-[10px] uppercase tracking-[0.32em] text-amber mb-4">04</div>
-          <h3 class="font-serif text-2xl mb-4 text-white/92">Creative Collaboration</h3>
-          <p class="text-white/58 leading-relaxed font-light">Work directly with the craftsman to develop a one-of-a-kind piece, restoration plan, or design concept from the ground up.</p>
+          <h3 class="font-serif text-2xl mb-4 text-white/92">Commercial & Cottage Furniture</h3>
+          <p class="text-white/58 leading-relaxed font-light">Practical repair and refinishing conversations for lodging, restaurants, rentals, offices, cottages, and other organizations with wooden furnishings.</p>
         </div>
       </div>
     </div>
@@ -474,8 +527,8 @@
   <section id="shop" class="py-24 md:py-32 px-5 md:px-8 bg-charcoal border-y border-white/8">
     <div class="max-w-7xl mx-auto">
       <div class="max-w-4xl mb-16 reveal">
-        <p class="text-[11px] uppercase tracking-[0.42em] text-amber font-semibold mb-5">Handcrafted Shop</p>
-        <h2 class="font-serif text-3xl md:text-5xl uppercase tracking-[0.10em] leading-tight text-white/92">Built by Hand. Made to Order.</h2>
+        <p class="text-[11px] uppercase tracking-[0.42em] text-amber font-semibold mb-5">Small Custom Work</p>
+        <h2 class="font-serif text-3xl md:text-5xl uppercase tracking-[0.10em] leading-tight text-white/92">Built by Hand. Quoted by Project.</h2>
         <p class="mt-6 text-white/62 text-base md:text-lg font-light leading-relaxed">
           Stable Table offers a curated collection of handcrafted wood pieces designed for everyday use, meaningful gifting, and custom home accents. Each piece is individually built and finished in-shop using carefully selected wood, natural grain character, and a level of craftsmanship that mass-produced items cannot match.
         </p>
@@ -490,7 +543,7 @@
             <div class="text-[10px] uppercase tracking-[0.30em] text-amber mb-4">Made to Order</div>
             <h3 class="font-serif text-2xl text-white/92 mb-4">Hardwood Coaster Sets</h3>
             <p class="text-white/58 font-light leading-relaxed mb-6">Refined hardwood coaster sets built for daily use and finished by hand. Each set highlights natural grain movement, rich tone, and a clean, durable finish.</p>
-            <p class="text-white/80 font-semibold mb-6">$35 – $65</p>
+            <p class="text-white/80 font-semibold mb-6">Quoted individually</p>
             <a href="#contact" class="inline-flex items-center justify-center border border-white/20 px-6 py-4 text-[10px] uppercase tracking-[0.28em] font-semibold hover:bg-amber hover:text-black hover:border-amber transition-all duration-300">Request This Item</a>
           </div>
         </article>
@@ -500,7 +553,7 @@
             <div class="text-[10px] uppercase tracking-[0.30em] text-amber mb-4">Outdoor Accent</div>
             <h3 class="font-serif text-2xl text-white/92 mb-4">Handcrafted Birdhouses</h3>
             <p class="text-white/58 font-light leading-relaxed mb-6">Durable outdoor birdhouses designed with structure, proportion, and timeless character. Built to bring warmth and handcrafted detail to porches, gardens, and outdoor spaces.</p>
-            <p class="text-white/80 font-semibold mb-6">$55 – $125</p>
+            <p class="text-white/80 font-semibold mb-6">Quoted individually</p>
             <a href="#contact" class="inline-flex items-center justify-center border border-white/20 px-6 py-4 text-[10px] uppercase tracking-[0.28em] font-semibold hover:bg-amber hover:text-black hover:border-amber transition-all duration-300">Request This Item</a>
           </div>
         </article>
@@ -510,7 +563,7 @@
             <div class="text-[10px] uppercase tracking-[0.30em] text-amber mb-4">Home Accent</div>
             <h3 class="font-serif text-2xl text-white/92 mb-4">Napkin Holders</h3>
             <p class="text-white/58 font-light leading-relaxed mb-6">Functional handcrafted napkin holders with clean lines, natural warmth, and subtle grain character. A simple everyday item elevated through real wood and hand-finished detail.</p>
-            <p class="text-white/80 font-semibold mb-6">$40 – $85</p>
+            <p class="text-white/80 font-semibold mb-6">Quoted individually</p>
             <a href="#contact" class="inline-flex items-center justify-center border border-white/20 px-6 py-4 text-[10px] uppercase tracking-[0.28em] font-semibold hover:bg-amber hover:text-black hover:border-amber transition-all duration-300">Request This Item</a>
           </div>
         </article>
@@ -520,7 +573,7 @@
             <div class="text-[10px] uppercase tracking-[0.30em] text-amber mb-4">Functional Decor</div>
             <h3 class="font-serif text-2xl text-white/92 mb-4">Key Holders & Wall Racks</h3>
             <p class="text-white/58 font-light leading-relaxed mb-6">Clean, practical wall pieces built to organize entryways, mudrooms, cabins, and home offices while adding handcrafted wood character to the space.</p>
-            <p class="text-white/80 font-semibold mb-6">$45 – $125</p>
+            <p class="text-white/80 font-semibold mb-6">Quoted individually</p>
             <a href="#contact" class="inline-flex items-center justify-center border border-white/20 px-6 py-4 text-[10px] uppercase tracking-[0.28em] font-semibold hover:bg-amber hover:text-black hover:border-amber transition-all duration-300">Request This Item</a>
           </div>
         </article>
@@ -530,7 +583,7 @@
             <div class="text-[10px] uppercase tracking-[0.30em] text-amber mb-4">Gift Pieces</div>
             <h3 class="font-serif text-2xl text-white/92 mb-4">Small Decorative Builds</h3>
             <p class="text-white/58 font-light leading-relaxed mb-6">One-of-a-kind small pieces such as display stands, small boxes, rustic accents, and tabletop decor. Ideal for gifts, cabins, offices, and personal spaces.</p>
-            <p class="text-white/80 font-semibold mb-6">$50 – $175</p>
+            <p class="text-white/80 font-semibold mb-6">Quoted individually</p>
             <a href="#contact" class="inline-flex items-center justify-center border border-white/20 px-6 py-4 text-[10px] uppercase tracking-[0.28em] font-semibold hover:bg-amber hover:text-black hover:border-amber transition-all duration-300">Request This Item</a>
           </div>
         </article>
@@ -586,7 +639,7 @@
       <div class="text-center max-w-3xl mx-auto mb-16 reveal">
         <p class="text-[11px] uppercase tracking-[0.42em] text-amber font-semibold mb-5">Client History</p>
         <h2 class="font-serif text-3xl md:text-5xl uppercase tracking-[0.10em] leading-tight text-white/92">Verified Excellence</h2>
-        <p class="mt-6 text-white/58 font-light leading-relaxed">Strong review presentation with cleaner spacing and a more polished luxury layout.</p>
+        <p class="mt-6 text-white/58 font-light leading-relaxed">A few words from customers who trusted Stable Table with meaningful furniture and custom work.</p>
       </div>
 
       <div class="grid lg:grid-cols-3 gap-6">
@@ -635,13 +688,17 @@
         <p class="text-[11px] uppercase tracking-[0.42em] text-amber font-semibold mb-5">Contact</p>
         <h2 class="font-serif text-3xl md:text-5xl uppercase tracking-[0.10em] leading-tight text-white/92">Start the Conversation</h2>
         <p class="mt-6 text-white/60 text-base md:text-lg font-light leading-relaxed max-w-xl">
-          Tell us about your project, piece, or idea. Whether you are restoring something meaningful or commissioning something new, this is where it starts.
+          Share as much or as little as you are comfortable providing. I will review what you send and follow up personally with practical next steps or questions needed for a free preliminary estimate.
         </p>
 
         <div class="mt-10 space-y-5 text-white/72">
           <div>
             <div class="text-[10px] uppercase tracking-[0.30em] text-white/40 mb-2">Phone</div>
             <a href="tel:19893065212" class="text-lg hover:text-amber transition-colors">(989) 306-5212</a>
+          </div>
+          <div>
+            <div class="text-[10px] uppercase tracking-[0.30em] text-white/40 mb-2">Email</div>
+            <a href="mailto:WadeCanell@gmail.com" class="text-lg hover:text-amber transition-colors">WadeCanell@gmail.com</a>
           </div>
           <div>
             <div class="text-[10px] uppercase tracking-[0.30em] text-white/40 mb-2">Website</div>
@@ -654,8 +711,17 @@
         </div>
       </div>
 
-      <div class="glass-panel rounded-[30px] p-7 md:p-10 reveal">
-        <form name="stable-table-contact" action="/thanks.html" method="POST" data-netlify="true" netlify-honeypot="bot-field" class="space-y-7">
+      <div class="form-shell rounded-[30px] p-7 md:p-10 reveal">
+        <div class="flex flex-col sm:flex-row sm:items-start sm:justify-between gap-4 mb-8 pb-7 border-b border-white/10">
+          <div>
+            <p class="text-[10px] uppercase tracking-[0.34em] text-amber font-semibold">Project Inquiry</p>
+            <h3 class="font-serif text-2xl md:text-3xl uppercase tracking-[0.08em] mt-3">Tell Me What You Know</h3>
+          </div>
+          <span class="self-start rounded-full border border-amber/30 bg-amber/10 px-4 py-2 text-[9px] uppercase tracking-[0.25em] text-amber">Every Field Optional</span>
+        </div>
+        <p class="text-sm text-white/52 leading-relaxed mb-7">Complete only the sections that are convenient. Providing a phone number or email is recommended so I can respond, but the form will send without requiring every box.</p>
+
+        <form id="stable-table-contact" name="stable-table-contact" action="/thanks.html" method="POST" data-netlify="true" netlify-honeypot="bot-field" class="space-y-7">
   <input type="hidden" name="form-name" value="stable-table-contact" />
   <input type="hidden" name="subject" value="New lead from Stable Table website" />
   <p class="hidden">
@@ -665,38 +731,66 @@
           <div class="grid md:grid-cols-2 gap-5">
             <div>
               <label class="block text-[10px] uppercase tracking-[0.30em] text-white/45 mb-3">Full Name</label>
-              <input type="text" name="name" required placeholder="Your name" class="w-full rounded-2xl border border-white/12 bg-white/[0.03] px-5 py-4 text-white placeholder:text-white/25 focus:outline-none focus:border-amber transition-colors" />
+              <input type="text" name="name" autocomplete="name" placeholder="Your name" class="form-control w-full rounded-2xl border border-white/12 bg-white/[0.03] px-5 py-4 text-white placeholder:text-white/25 focus:outline-none focus:border-amber transition-colors" />
             </div>
             <div>
               <label class="block text-[10px] uppercase tracking-[0.30em] text-white/45 mb-3">Email Address</label>
-              <input type="email" name="email" required placeholder="email@address.com" class="w-full rounded-2xl border border-white/12 bg-white/[0.03] px-5 py-4 text-white placeholder:text-white/25 focus:outline-none focus:border-amber transition-colors" />
+              <input type="email" name="email" autocomplete="email" placeholder="email@address.com" class="form-control w-full rounded-2xl border border-white/12 bg-white/[0.03] px-5 py-4 text-white placeholder:text-white/25 focus:outline-none focus:border-amber transition-colors" />
             </div>
           </div>
 
           <div class="grid md:grid-cols-2 gap-5">
             <div>
               <label class="block text-[10px] uppercase tracking-[0.30em] text-white/45 mb-3">Phone</label>
-              <input type="tel" name="phone" placeholder="(555) 555-5555" class="w-full rounded-2xl border border-white/12 bg-white/[0.03] px-5 py-4 text-white placeholder:text-white/25 focus:outline-none focus:border-amber transition-colors" />
+              <input type="tel" name="phone" autocomplete="tel" placeholder="(555) 555-5555" class="form-control w-full rounded-2xl border border-white/12 bg-white/[0.03] px-5 py-4 text-white placeholder:text-white/25 focus:outline-none focus:border-amber transition-colors" />
             </div>
             <div>
               <label class="block text-[10px] uppercase tracking-[0.30em] text-white/45 mb-3">Project Type</label>
-              <select name="project_type" class="w-full rounded-2xl border border-white/12 bg-white/[0.03] px-5 py-4 text-white focus:outline-none focus:border-amber transition-colors">
+              <select name="project_type" class="form-control w-full rounded-2xl border border-white/12 bg-white/[0.03] px-5 py-4 text-white focus:outline-none focus:border-amber transition-colors">
                 <option value="" class="bg-graphite">Select one</option>
                 <option class="bg-graphite">Furniture Restoration</option>
-                <option class="bg-graphite">Custom Build</option>
                 <option class="bg-graphite">Refinishing & Repair</option>
-                <option class="bg-graphite">Creative Collaboration</option>
+                <option class="bg-graphite">Custom Furniture or Woodwork</option>
+                <option class="bg-graphite">Commercial or Cottage Furniture</option>
+                <option class="bg-graphite">Other Woodworking Request</option>
+              </select>
+            </div>
+          </div>
+
+          <div class="grid md:grid-cols-2 gap-5">
+            <div>
+              <label class="block text-[10px] uppercase tracking-[0.30em] text-white/45 mb-3">Number of Pieces</label>
+              <input type="number" name="number_of_pieces" min="1" placeholder="Example: 1" class="form-control w-full rounded-2xl border border-white/12 bg-white/[0.03] px-5 py-4 text-white placeholder:text-white/25 focus:outline-none focus:border-amber transition-colors" />
+            </div>
+            <div>
+              <label class="block text-[10px] uppercase tracking-[0.30em] text-white/45 mb-3">Approximate Dimensions</label>
+              <input type="text" name="dimensions" placeholder="Length × width × height" class="form-control w-full rounded-2xl border border-white/12 bg-white/[0.03] px-5 py-4 text-white placeholder:text-white/25 focus:outline-none focus:border-amber transition-colors" />
+            </div>
+          </div>
+
+          <div class="grid md:grid-cols-2 gap-5">
+            <div>
+              <label class="block text-[10px] uppercase tracking-[0.30em] text-white/45 mb-3">Project Location</label>
+              <input type="text" name="project_location" autocomplete="address-level2" placeholder="City or town" class="form-control w-full rounded-2xl border border-white/12 bg-white/[0.03] px-5 py-4 text-white placeholder:text-white/25 focus:outline-none focus:border-amber transition-colors" />
+            </div>
+            <div>
+              <label class="block text-[10px] uppercase tracking-[0.30em] text-white/45 mb-3">Transport</label>
+              <select name="transport" class="form-control w-full rounded-2xl border border-white/12 bg-white/[0.03] px-5 py-4 text-white focus:outline-none focus:border-amber transition-colors">
+                <option value="" class="bg-graphite">Select one</option>
+                <option class="bg-graphite">I can bring the project to the shop</option>
+                <option class="bg-graphite">I may need pickup or delivery</option>
+                <option class="bg-graphite">Not sure yet</option>
               </select>
             </div>
           </div>
 
           <div>
             <label class="block text-[10px] uppercase tracking-[0.30em] text-white/45 mb-3">Project Details</label>
-            <textarea name="message" rows="6" required placeholder="Tell us about your piece, your space, or what you want built." class="w-full rounded-2xl border border-white/12 bg-white/[0.03] px-5 py-4 text-white placeholder:text-white/25 focus:outline-none focus:border-amber transition-colors resize-y"></textarea>
+            <textarea name="message" rows="6" placeholder="Describe the piece, damage or requested work, desired appearance, and any timing considerations." class="form-control w-full rounded-2xl border border-white/12 bg-white/[0.03] px-5 py-4 text-white placeholder:text-white/25 focus:outline-none focus:border-amber transition-colors resize-y"></textarea>
           </div>
 
           <div class="flex flex-col sm:flex-row gap-4 sm:items-center sm:justify-between pt-2">
-            <p class="text-sm text-white/42 font-light leading-relaxed">We will review your request and respond as soon as possible.</p>
+            <p class="text-sm text-white/42 font-light leading-relaxed">Send what you have now. I can request photographs or measurements directly if they are needed. Final scope and pricing are confirmed after physical inspection.</p>
             <button type="submit" class="inline-flex items-center justify-center px-8 py-4 bg-amber text-black text-[11px] uppercase tracking-[0.30em] font-semibold hover:opacity-90 transition-opacity">
               Send Inquiry
             </button>
@@ -738,6 +832,7 @@
 
     window.addEventListener('scroll', revealOnScroll);
     window.addEventListener('load', revealOnScroll);
+
   </script>
 
   <script type="application/ld+json">
@@ -747,15 +842,18 @@
     "name": "Stable Table Woodworking & Restoration L.L.C.",
     "telephone": "+1-989-306-5212",
     "url": "https://stabletable-woodworking.com",
-    "image": "_First_Logo_Only.jpg",
+    "image": "https://stabletable-woodworking.com/_First_Logo_Only.jpg",
     "address": {
       "@type": "PostalAddress",
       "addressLocality": "Cheboygan",
       "addressRegion": "MI",
       "addressCountry": "US"
     },
-    "description": "Veteran-owned woodworking studio offering custom furniture, heirloom restoration, refinishing, and repair in Cheboygan, Michigan."
+    "description": "Veteran-owned Cheboygan business offering furniture repair, restoration, refinishing, and select custom woodworking.",
+    "areaServed": "Northern Michigan",
+    "email": "WadeCanell@gmail.com"
   }
   </script>
 </body>
 </html>
+

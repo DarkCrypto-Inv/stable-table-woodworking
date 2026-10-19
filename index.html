@@ -721,7 +721,7 @@
         </div>
         <p class="text-sm text-white/52 leading-relaxed mb-7">Complete only the sections that are convenient. Providing a phone number or email is recommended so I can respond, but the form will send without requiring every box.</p>
 
-        <form id="stable-table-contact" name="stable-table-contact" action="/thanks.html" method="POST" data-netlify="true" netlify-honeypot="bot-field" class="space-y-7">
+        <form id="stable-table-contact" name="stable-table-contact" action="/thanks.html" method="POST" enctype="multipart/form-data" data-netlify="true" netlify-honeypot="bot-field" class="space-y-7">
   <input type="hidden" name="form-name" value="stable-table-contact" />
   <input type="hidden" name="subject" value="New lead from Stable Table website" />
   <p class="hidden">
@@ -789,8 +789,16 @@
             <textarea name="message" rows="6" placeholder="Describe the piece, damage or requested work, desired appearance, and any timing considerations." class="form-control w-full rounded-2xl border border-white/12 bg-white/[0.03] px-5 py-4 text-white placeholder:text-white/25 focus:outline-none focus:border-amber transition-colors resize-y"></textarea>
           </div>
 
+
+          <div class="rounded-2xl border border-amber/25 bg-white/[0.02] p-5">
+            <label for="project-photo" class="block text-[10px] uppercase tracking-[0.30em] text-white/70 mb-3">Add a Project Photo (Optional)</label>
+            <p id="project-photo-help" class="text-sm text-white/60 leading-relaxed mb-4">Show the whole piece, damage, or an inspiration photo. Choose one JPG, PNG, WebP, or HEIC photo, up to 7 MB. You can also send photos to WadeCanell@gmail.com.</p>
+            <input id="project-photo" name="project_photo" type="file" accept=".jpg,.jpeg,.png,.webp,.heic,.heif" aria-describedby="project-photo-help project-photo-error" class="form-control block w-full min-w-0 rounded-xl border border-white/20 bg-black/20 p-3 text-sm text-white/80 file:mr-3 file:rounded-lg file:border-0 file:bg-amber file:px-4 file:py-3 file:font-semibold file:text-black focus:outline-none focus:border-amber" />
+            <p id="project-photo-error" role="alert" class="mt-3 text-sm text-red-300" hidden></p>
+          </div>
+
           <div class="flex flex-col sm:flex-row gap-4 sm:items-center sm:justify-between pt-2">
-            <p class="text-sm text-white/42 font-light leading-relaxed">Send what you have now. I can request photographs or measurements directly if they are needed. Final scope and pricing are confirmed after physical inspection.</p>
+            <p class="text-sm text-white/42 font-light leading-relaxed">Send what you have now, with or without a photo. I can follow up for additional photographs or measurements. Final scope and pricing are confirmed after physical inspection.</p>
             <button type="submit" class="inline-flex items-center justify-center px-8 py-4 bg-amber text-black text-[11px] uppercase tracking-[0.30em] font-semibold hover:opacity-90 transition-opacity">
               Send Inquiry
             </button>
@@ -854,6 +862,36 @@
     "email": "WadeCanell@gmail.com"
   }
   </script>
+
+  <script>
+    (() => {
+      const form = document.getElementById('stable-table-contact');
+      const photo = document.getElementById('project-photo');
+      const error = document.getElementById('project-photo-error');
+      function validatePhoto() {
+        const file = photo.files[0];
+        let message = '';
+        if (file && !/\.(jpe?g|png|webp|heic|heif)$/i.test(file.name)) {
+          message = 'Please choose a JPG, PNG, WebP, or HEIC photo.';
+        } else if (file && file.size > 7 * 1024 * 1024) {
+          message = 'This photo is larger than 7 MB. Choose a smaller photo, or email it to WadeCanell@gmail.com.';
+        }
+        photo.setCustomValidity(message);
+        photo.setAttribute('aria-invalid', message ? 'true' : 'false');
+        error.textContent = message;
+        error.hidden = !message;
+        return !message;
+      }
+      photo.addEventListener('change', validatePhoto);
+      form.addEventListener('submit', event => {
+        if (!validatePhoto()) {
+          event.preventDefault();
+          photo.reportValidity();
+        }
+      });
+    })();
+  </script>
+
 </body>
 </html>
 

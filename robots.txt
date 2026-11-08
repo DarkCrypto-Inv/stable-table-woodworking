@@ -1,0 +1,4 @@
+User-agent: *
+Allow: /
+
+Sitemap: https://stabletable-woodworking.com/sitemap.xml
